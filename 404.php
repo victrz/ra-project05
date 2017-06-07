@@ -8,8 +8,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+<content class="flex">
+	<div id="primary" class="content-area flex flex-col flex-grow">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -51,5 +51,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<div class="aside">
+		<?php get_sidebar(); ?>
+	</div>
+</content>
 <?php get_footer(); ?>

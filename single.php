@@ -5,9 +5,9 @@
  * @package RED_Starter_Theme
  */
 
-get_header(); echo "single.php";?>
-
-	<div id="primary" class="content-area">
+get_header();?>
+ <content class="flex" >
+	<div id="primary" class="content-area flex flex-col flex-grow">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -28,6 +28,9 @@ get_header(); echo "single.php";?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+<div class="aside">
+	<?php get_sidebar(); ?>
+</div>
 
-<?php get_sidebar(); ?>
+</content>
 <?php get_footer(); ?>

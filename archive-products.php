@@ -2,7 +2,8 @@
 get_header();
 $queried_object= get_queried_object();
 $title=$queried_object->name;
-$products = new WP_Query( array( 'posts_per_page' => 16,'post_type' => 'products') );
+//add action
+// $products = new WP_Query( array( 'posts_per_page' => 16,'post_type' => 'products') );
 $terms = get_terms([
   'taxonomy' => type,
   'hide_empty' => false,
@@ -11,14 +12,15 @@ $terms = get_terms([
 <div id="terms" class="flex flex-col flex-align-items-center">
 
   <h1><?php echo $title;?></h1><ul>
-  <?php
-  foreach($terms as $term){ ?>
-    <li><a href='<?php echo get_term_link($term->term_id) ?>'><?php echo strtoupper($term->name); ?></a></li>
-    <?php }?></ul>
- <!--  tax terms links here-->
+  <div style="width: 30%; margin: auto; display: flex; justify-content: space-between;">
+      <?php
+      foreach($terms as $term){ ?>
+        <li><a href='<?php echo get_term_link($term->term_id) ?>'><?php echo strtoupper($term->name); ?></a></li>
+        <?php }?></ul>
+ </div>
   <div class="horizontal_dotted_line"></div>
   <section class="parent">
-<?php while ( $products->have_posts() ) : $products->the_post();?>
+<?php while ( have_posts() ) : the_post();?>
 
 <div class="each-product flex flex-col padding-left-item">
   <div class="journal-entry1">
@@ -34,6 +36,7 @@ $terms = get_terms([
 <?php endwhile;?>
 
 </section>
+</div>
 
 <style>
 .each-product{
@@ -64,6 +67,9 @@ $terms = get_terms([
   position: relative;
   padding: 5px;
   height: auto;
+}
+#terms ul{
+  margin-left: 0px;
 }
 </style>
 

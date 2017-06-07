@@ -20,7 +20,7 @@
 		<?php wp_head(); ?>
 		</head>
 
-		<body <?php body_class(); ?>
+		<body <?php body_class(); ?>>
 
 		<div id="page" class="hfeed site">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html( 'Skip to content' ); ?></a>
@@ -30,10 +30,10 @@
 					<!-- <p class="site-description"><?php bloginfo( 'description' ); ?></p> -->
 				</div> <!-- .site-branding -->
 
-				<div <?php new camp_banner();?> >
+				<div <?php $banner = new camp_banner();?> >
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<div id="top-nav">
-								<img onClick="parent.location='../'" src="<?php echo get_bloginfo('stylesheet_directory')?>/assets/images/logos/inhabitent-logo-tent-white.svg" alt="Logo Of Inhabitent" class="logo-img">
+								<div onClick="parent.location='<?php echo home_url( '/' ); ?>'" alt="Logo Of Inhabitent" class="logo-img <?php $banner->logo_options() ?>"><?php dynamic_sidebar('header-nav-logo')?></div>
 								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?></button>
 								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 							</div>

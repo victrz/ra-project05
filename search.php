@@ -4,11 +4,11 @@
  *
  * @package RED_Starter_Theme
  */
-
+echo "search.php";
 get_header(); ?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+ <content class="flex" >
+	<section id="primary"  class="content-area flex flex-col flex-grow">
+		<main id="main" style="width: 80%;" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -33,6 +33,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
+<div class="aside">
 <?php get_sidebar(); ?>
+</div>
+</content>
 <?php get_footer(); ?>
