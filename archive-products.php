@@ -41,8 +41,6 @@ $terms = get_terms([
 <style>
 .each-product{
   width: 25%;
-  display: flex;
-  flex-direction: column;
   margin: 10px 0;
   /*justify-content: center;*/
   /*align-items: center;*/

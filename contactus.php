@@ -1,4 +1,5 @@
 <?php
+/* Template Name: Contact Us*/
 get_header();?>
 <content class="flex">
   <div class="flex flex-col flex-grow">

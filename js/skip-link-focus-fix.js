@@ -5,7 +5,7 @@
  *
  * Learn more: https://github.com/Automattic/RED Starter Theme/pull/136
  */
-(function () {
+(function () {  
 	var isWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
 		isOpera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
 		isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1;

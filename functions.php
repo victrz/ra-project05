@@ -86,6 +86,7 @@ function red_starter_scripts() {
 	wp_enqueue_style( 'red-starter-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'red-starter-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'i-haz-search', get_template_directory_uri() . '/js/search.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -102,83 +103,17 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/cpt.php';
+require get_template_directory() . '/inc/sidebars.php';
 
-add_action( 'init', 'custom_posttype_loop' );
-function custom_posttype_loop(){
-  $cptarray=array(
-    "products"=>array("type"),
-     "adventures" => array(),
-   );
-  foreach ($cptarray as $key => $value){
-    if(is_array($value)){
-      create_posttype($key);
-      foreach($value as $tax){
-        create_taxonomy($tax, $key);
-      }
+
+
+function new_query( $query ){
+  if(!is_admin()){
+		//shows 16 posts per page on products archive page:
+    if(is_post_type_archive('products' ) ){
+      $query->set( 'posts_per_page', 16);
     }
-    else{
-    create_posttype($value);
-    }
-  }
+	}
 }
-
-function create_posttype($key) {
-  $new_name = str_replace(['/','.','-',':'], '', $key);
-  register_post_type( $new_name,
-  		array(
-  			'labels' => array(
-  				'name' => __( $key ),
-  				'singular_name' => __( $key )
-  			),
-  			'public' => true,
-  			'has_archive' => true,
-  			'rewrite' => array('slug' => $new_name),
-  		)
-  	);
-}
-function create_taxonomy($tax, $key){
-  $new_name = str_replace(['/','.','-',':'], '', $key);
-  register_taxonomy($tax, $new_name, array(
-			'label' => __( $tax ),
-			));
-}
-register_sidebar(array(
-	'name'          => __( 'footer sidebar', 'theme_text_domain' ),
-	'id'            => 'footer-sidebar',
-	'description'   => '',
-        'class'         => '',
-	'before_widget' => '<div class="testing">',
-	'after_widget'  => '</div>',
-	'before_title'  => '<h2 class="footer">',
-	'after_title'   => '</h2>' ));
-
-	register_sidebar(array(
-		'name'          => __( 'header nav logo', 'theme_text_domain' ),
-		'id'            => 'header-nav-logo',
-		'description'   => '',
-	        'class'         => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h2 class="header nav logo">',
-		'after_title'   => '</h2>' ));
-
-		register_sidebar(array(
-			'name'          => __( 'page 404', 'theme_text_domain' ),
-			'id'            => 'page-404',
-			'description'   => '',
-						'class'         => '',
-			'before_widget' => '<div class="page404">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2>',
-			'after_title'   => '</h2>' ));
-
-
-		function new_query( $query ){
-		  if(!is_admin()){
-				//shows 16 posts per page on products archive page:
-		    if(is_post_type_archive('products' ) ){
-		      $query->set( 'posts_per_page', 16);
-		    }
-		}
-		}
-		add_action( 'pre_get_posts', 'new_query' );
+add_action( 'pre_get_posts', 'new_query' );

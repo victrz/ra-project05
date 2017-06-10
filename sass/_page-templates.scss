@@ -100,30 +100,26 @@ p{
 .padding20{
   padding:20px;
 }
-.padding-center-item{
-  padding: 0 5px 0 5px;
-}
-.padding-left-item{
-  padding: 0 10px 0 0;
-}
-.padding-right-item{
-  padding: 0 0 0 10px;
-}
-.margin-center-item{
-  margin: 0 5px 0 5px;
-}
-.margin-left-item{
-  margin: 0 10px 0 0;
-}
-.margin-right-item{
-  margin: 0 0 0 10px;
-}
+// .padding-center-item{
+//   padding: 0 5px 0 5px;
+// }
+// .padding-left-item{
+//   padding: 0 10px 0 0;
+// }
+// .padding-right-item{
+//   padding: 0 0 0 10px;
+// }
+// .margin-center-item{
+//   margin: 0 5px 0 5px;
+// }
+// .margin-left-item{
+//   margin: 0 10px 0 0;
+// }
+// .margin-right-item{
+//   margin: 0 0 0 10px;
+// }
 
 #top-nav{
-  height: 6vh;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 10px;
   font-family: "Novecento-Normal.ttf";
 }
@@ -167,8 +163,11 @@ content{
 .green-logo li:nth-child(2){
   display: none;
 }
-.logo-img li{
+.logo-img {
+
+  li{
   list-style-type: none;
+}
 }
 .shop-category{
   border-style: solid;
@@ -194,34 +193,40 @@ content{
   width: 50%;
 }
 .home-banner{
-
+display: flex;
+flex-direction: column;
              background-position: center, center;
              background-size:  contain, cover;
              background-repeat: no-repeat;
+
 }
+
 
 #no-banner {
   background-image: none;
-  height: 6vh;
+  height: 10vh;
   border-bottom: solid 1px #c3c3c3;
 
-      #top-nav a:link {
+      #top-nav {
+        a:link {
       text-decoration: none;
       color: #248A83;
+        }
+      a:visited{
+        text-decoration: none;
+        color: #248A83;
       }
-      #top-nav a:visited{
-      text-decoration: none;
-      color: #248A83;
-      }
-      #top-nav a:active{
-      text-decoration: none;
-      color: #248A83;
+      a:active{
+        text-decoration: none;
+        color: #248A83;
       }
 }
-
+.search-icon{
+  color: #248A83;
+}
+}
 
 footer{
-  // background-image: url("<?php bloginfo('stylesheet_directory')?>/assets/images/dark-wood@2x.png");
   height: 50vh;
   background-position: center;
   background-size: cover;
@@ -239,31 +244,6 @@ footer{
   font-family: "Merriweather-Bold.ttf";
 }
 
-
-.left-adventure h3 {
-   position: absolute;
-   top: 20%;
-   left: 0;
-   width: 100%;
-}
-.right-top-adventure h3 {
-   position: absolute;
-   top: 20%;
-   left: 0;
-   width: 100%;
-}
-.right-bottom-left-adventure h3 {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-}
-.right-bottom-right-adventure h3 {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-}
 .button-more-adventures{
   background-color: #008080;
   font-family: "Novecento-Normal.ttf";
@@ -274,100 +254,68 @@ footer{
 }
 
 .adventure-wrap{
-  width: 100%;
   padding-bottom: 20px;
 }
-.button-readmore{
-  background: none;
-  font-family: "Novecento-Normal.ttf";
 
-  padding: 10px 24px;
-  border: 1px solid #ffffff;
-  color: white;
-  display: flex;
-  align-self: flex-start;
-  margin: 10px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.adventure1{
+  height: 65vh;
+  margin-right: 5px;
 }
-.left-adventure{
-  position: relative;
-  height: 50vh;
-  width: 50%;
-  overflow: hidden;
-
-}
-.right-top-adventure{
-  position: relative;
-  height: 24vh;
-  overflow: hidden;
+.adventure2{
+  height: 32vh;
   width: 100%;
-  /*margin: 0 0 0 5px;*/
+  margin-bottom: 2.5px;
 }
-.right-bottom-left-adventure{
-  position: relative;
-  height: 24vh;
-  width: 50%;
-  margin: 10px 10px 0 0px;
-  overflow: hidden;
+.adventure3{
+  height: 32vh;
+  margin:2.5px 2.5px 0 0;
 }
-.right-bottom-right-adventure{
-  position: relative;
-  height: 24vh;
-  width: 50%;
-  margin: 10px 0 0 0;
-  overflow: hidden;
+.adventure4{
+  height: 32vh;
+  margin: 2.5px 0 0 2.5px;
 }
 .left-margin{
   margin-left: 5px;
 }
-.button-journal{
-  background-color: #ffffff;
-  padding: 10px 24px;
-  border: 1px solid #000000;
-  color: black;
-  display: flex;
-  position: absolute;
-   bottom: 20px;
-   left: 20px;
-}
+
 .journal-category{
-  width: 33.3333%;
-  display: flex;
-  flex-direction: column;
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*text-align: center;*/
+  width: 33%;
 }
 .journal-border{
   border-style: solid;
   border-width: 3px 1px 1px 1px;
   border-color: #c3c3c3;
-  width: 100%;
-  flex-grow: 1;
-  position: relative;
-  height: 25vh
+  height: auto;
 }
 .journal-entry1{
   border-style: solid;
   border-width: 3px 1px 1px 1px;
   border-color: #c3c3c3;
   height: 30vh;
-  width: 100%;
+  // width: 100%;
+}
+.button-journal{
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #000000;
+  color: black;
+
 }
 .entry-img{
   height: 30vh;
-  width: 100%;
 }
 .journal-info{
   justify-content: start;      /* Pack items from the start */
-}
-.journal-info h2{
-  font-family: "Novecento-Normal.ttf";
-}
-.journal-info p{
-  padding: 10px;
+  h2{
+    font-family: "Novecento-Normal.ttf";
+    padding: 10px;
+    font-size: 2em;
+  }
+  p{
+    padding: 10px;
+    margin-bottom:0;
+  }
 }
 .child {
   height: 40vh;
@@ -382,16 +330,16 @@ footer{
     width: 70%;
     margin: auto;
 }
+
 .button-readmore{
   background: none;
-  padding: 10px 24px;
+  font-family: "Novecento-Normal.ttf";
+  padding: 10px;
   border: 1px solid #ffffff;
   color: white;
-  display: flex;
-  align-self: flex-start;
   margin: 10px;
-  bottom: 20%;
-  left: 0;
+  width: 25vh;
+
 }
 
 .horizontal_dotted_line{
@@ -471,12 +419,81 @@ color: #248A83;
   width: 30%;
   padding: 40px 0 40px 40px;
   border-left: solid 1px #c3c3c3;
+    p{
+    color: black;
+    margin: 5px;
+    }
+    h2{
+    color: black;
+    padding: 0px;
+    }
 }
-.aside p{
-  color: black;
-  margin: 5px;
+.banner-overlay{
+  display: flex;
+  justify-content: center;
+  color: white;
 }
-.aside h2{
+.width100{
+    width: 100%;
+}
+.width25{
+  width: 25%;
+}
+.width50{
+  width: 50%;
+}
+
+.background-img-prop{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.line-space-5{
+  line-height: 0.8em;
+  font-size: 1.8em;
+}
+.text-shadow{
+   text-shadow: 2px 2px 5px #000000;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.product-border{
+  border-style: solid;
+  border-width: 3px 1px 1px 1px;
+  border-color: #c3c3c3;
+  height: auto;
+}
+.h-20vh{
+  height: 20vh;
+}
+.h-50vh{
+  height: 50vh;
+}
+.white{
+  color: white;
+}
+.black{
   color: black;
-  padding: 0px;
+}
+.entry-content{
+  h1{
+    text-align: center;
+  }
+}
+// #nav-search{
+//   display: none;
+//   transition: display 2s linear;
+//   -moz-transition: display 2s linear;
+//
+// }
+#nav-search{
+  // display: none;
+  width: 0px;
+  overflow: hidden;
+  transition: width 2s;
+-moz-transition: width 1s; /* Firefox 4 */
+-webkit-transition: width 1s; /* Safari and Chrome */
+-o-transition:width 1s; /* Opera */
+
 }

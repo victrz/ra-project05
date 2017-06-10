@@ -18,6 +18,7 @@
 
 
 		<?php wp_head(); ?>
+
 		</head>
 
 		<body <?php body_class(); ?>>
@@ -30,17 +31,20 @@
 					<!-- <p class="site-description"><?php bloginfo( 'description' ); ?></p> -->
 				</div> <!-- .site-branding -->
 
-				<div <?php $banner = new camp_banner();?> >
-						<nav id="site-navigation" class="main-navigation" role="navigation">
-							<div id="top-nav">
-								<div onClick="parent.location='<?php echo home_url( '/' ); ?>'" alt="Logo Of Inhabitent" class="logo-img <?php $banner->logo_options() ?>"><?php dynamic_sidebar('header-nav-logo')?></div>
-								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?></button>
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<div <?php $banner = new camp_banner();?> class="flex flex-col" style="width:100%;">
+					<nav id="top-nav" class="flex width100 flex-just-between flex-align-items-center main-navigation" role="navigation">
+						<div onClick="parent.location='<?php echo home_url( '/' ); ?>'" alt="Logo Of Inhabitent" class="logo-img <?php $banner->logo_options() ?>"><?php dynamic_sidebar('header-nav-logo')?></div>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?> </button>
+						<div class="flex">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+							<div id="nav-search" class="flex">
+								<?php get_search_form(); ?>
+								<!-- <input type="button" id="search-icon" value="click" /> -->
 							</div>
+							<div class="fa fa-search flex flex-align-items-center" id="search-icon" aria-hidden="true"></div>
+						</div>
 					</nav><!-- #site-navigation -->
-					<div id="banner-center-display"></div>
+					<div class="banner-overlay flex-grow flex-align-items-center "><?php $banner->overlay_options(); ?></div>
 				</div>
-
 			</header><!-- #masthead -->
-
 			<div id="content" class="site-content">
