@@ -7,8 +7,8 @@
 
 get_header();?>
  <content class="flex" >
-	<div id="primary" class="content-area flex flex-col flex-grow">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="flex flex-col flex-grow">
+		<!-- <main id="main" class="site-main" role="main"> -->
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -16,7 +16,7 @@ get_header();?>
 
 			<div class="entry-footer"><?php the_post_navigation(); ?></div>
 
-<section class="comments">
+<section class="comments padding30">
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
@@ -26,11 +26,10 @@ get_header();?>
 </section>
 		<?php endwhile; // End of the loop. ?>
 
-		</main><!-- #main -->
+		<!-- </main><!-- #main -->
 	</div><!-- #primary -->
 <div class="aside">
 	<?php get_sidebar(); ?>
 </div>
-
 </content>
 <?php get_footer(); ?>

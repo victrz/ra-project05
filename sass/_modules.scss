@@ -60,3 +60,51 @@
 	content: "";
 	display: table;
 }
+
+
+/* FLEX */
+.flex{
+  display: flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-just-center{
+  justify-content: center;
+}
+.flex-just-between{
+  justify-content: space-between;
+}
+.flex-just-around{
+  justify-content: space-around;
+}
+.flex-just-end{
+  justify-content: flex-end;
+}
+.flex-just-start{
+  justify-content: flex-start;
+}
+.flex-align-center{
+  align-content: center;
+}
+.flex-align-items-center{
+  align-items: center;
+}
+.flex-align-end{
+  align-items: flex-end;
+}
+.flex-align-start{
+  align-self: flex-start;
+}
+.flex-align-end{
+  align-self: flex-end;
+}
+.flex-grow{
+  flex-grow:1;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}

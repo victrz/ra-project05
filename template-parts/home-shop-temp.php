@@ -9,10 +9,10 @@
   <?php
   foreach($terms as $term){ ?>
 
-    <div class="shop-category flex">
-      <img src="<?php echo get_bloginfo('stylesheet_directory')?>/assets/images/product-type-icons/<?php echo $term->name ?>.svg" height="50px" alt="do icon" width="80px" class="padding10"/>
-      <p><?php echo $term->description?></p>
-      <input type=button class="button-shop" onClick="parent.location='../project05/type/<?php echo $term->name ?>/'" value='<?php echo strtoupper($term->name)?> STUFF'>
+    <div class="width25 margin-10 text-align-cent border-solid flex flex-col flex-align-items-center">
+      <img src="<?php echo get_bloginfo('stylesheet_directory')?>/assets/images/product-type-icons/<?php echo $term->name ?>.svg" height="50px" alt="do icon" width="80px" class="flex padding10"/>
+      <p class="flex"><?php echo $term->description?></p>
+      <a href="<?php echo site_url()?>/type/<?php echo $term->name?>" class="button-shop flex flex-just-center"><?php echo strtoupper($term->name)?> STUFF</a>
     </div>
     <?php }?>
 

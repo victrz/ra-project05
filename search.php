@@ -4,11 +4,11 @@
  *
  * @package RED_Starter_Theme
  */
-echo "search.php";
+
 get_header(); ?>
  <content class="flex" >
 	<section id="primary"  class="content-area flex flex-col flex-grow">
-		<main id="main" style="width: 80%;" class="site-main" role="main">
+		<main id="search" class="site-main width70 padding30" role="main">
 
 		<?php if ( have_posts() ) : ?>
 

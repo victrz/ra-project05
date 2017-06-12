@@ -1,23 +1,21 @@
-<?php echo "taxonomy type page";
+<?php
 get_header();
-print_r($echo);
 $term = get_query_var( 'term' );?>
-<div id="test" class="flex flex-col flex-align-items-center">
-  <h1><?php echo $term;?></h1>
-  <p><?php echo term_description();?></p>
-  <div class="horizontal_dotted_line"></div>
-  <section class="parent">
+<div class="flex flex-col flex-align-items-center width70 margin-auto padding30" id="term">
+  <h1 class="uppercase"><?php echo $term;?></h1>
+  <?php echo term_description();?>
+  <div class="horizontal-dotted-line width100"></div>
+  <section class="flex flex-wrap flex-just-center">
   <?php while ( have_posts() ) : the_post();?>
-
-  <div class="width25 flex flex-col padding-left-item">
-    <div class="h-20vh">
-      <img class="h-20vh width100" src="<?php echo the_field('image'); ?>" onClick="parent.location='<?php the_permalink()?>'" >
-    </div>
-    <div class="product-border width100 flex-grow">
-      <div>
-        <p style="text-align: center;"><?php the_title(); ?> ......... $<?php echo get_field('price');?> </p>
+    <div class="margin-10 width20 flex flex-col">
+      <div class="h-20vh border-solid">
+        <a href="<?php echo the_permalink()?>" ><img class="h-20vh width100" src="<?php echo the_field('image'); ?>"></a>
+      </div>
+      <div id="product-info"class="border-solid width100 padding10 flex flex-grow">
+        <p><?php the_title(); ?></p>
+        <div class="flex-grow dot-dot-dot"></div>
+        <p>$<?php echo get_field('price');?></p>
       </div>
     </div>
-  </div>
   <?php endwhile;?>
 </section>

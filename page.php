@@ -4,11 +4,11 @@
  *
  * @package RED_Starter_Theme
  */
-echo "page page";
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main" style="width: 75%; margin: auto;">
+		<main id="main" class="site-main width70 margin-auto padding30" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

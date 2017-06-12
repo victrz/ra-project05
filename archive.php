@@ -5,7 +5,7 @@
  * @package RED_Starter_Theme
  */
 
-get_header(); echo "archive.php";?>
+get_header();?>
 
 
 	<div id="primary" class="content-area">

@@ -2,67 +2,111 @@
 # Typography
 --------------------------------------------------------------*/
 
-body,
-button,
-input,
-select,
-textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+/* FONTS and TEXT*/
+.uppercase{
+  text-transform: uppercase;
+}
+.base-font{
+  font-family: $font__main;
+}
+.line-space-5{
+  line-height: 0.8em;
+  font-size: 1.8em;
+}
+.text-shadow{
+   text-shadow: 2px 2px 5px $color__secondary;
+}
+.text-align-cent{
+  text-align: center;
+}
+.font-secondary{
+  font-family: $font__secondary;
+}
+.body-font{
+  font-family:"Merriweather", serif;
+  font-weight: lighter;
+  font-size: 16px;
+}
+.text-white{
+  color: $color__primary;
 }
 
-/* Headings */
+h1{
+  font-family: $font__secondary;
+  font-size: 2em;
+  // padding: 20px;
+}
+h2{
+  font-family: $font__secondary-bold;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 0.8em;
 
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
+}
+h3{
+  font-family: $font__secondary;
+  font-weight: lighter;
+  font-size: 1em;
+
+}
+h4{
+  font-family: "Novecento-DemiBold.ttf";
+  font-size: 1em;
+}
+h5{
+  font-family: "Novecento-DemiBold.ttf";
+  font-size: 1.2em;
+}
+p{
+  font-family:"Merriweather", serif;
+  font-weight: lighter;
+	margin: 5px;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: $color__primary;
+}
+article{
+  h1{
+    margin: 0;
+
+  }
+  a:link, a:visited {
+      text-decoration: none;
+      color: $color__secondary;
+  }
 }
 
-/* Copy */
+.page-content{
+  h2{
+    padding:20px 0 20px 0;
+    color: $color__secondary;
+  }
+  li{
+    a:link, a:visited {
+        text-decoration: none;
+        color: $color__primary-accent;
 
-p {
-	margin-bottom: $base__space-unit;
+    }
+  }
 }
 
-dfn, cite, em, i {
-	font-style: italic;
+ul {
+    list-style-type: none;
+    // width: 60%;
 }
 
-blockquote {
-	margin: 0 $base__space-unit;
-}
+.entry-content{
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h2{
+    text-transform: uppercase;
+    padding: 10px 0;
 
-address {
-	margin: 0 0 $base__space-unit;
+  }
 }
-
-pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
-	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
-	margin-bottom: 1.6rem;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6rem;
-}
-
-code, kbd, tt, var {
-	font-family: $font__code;
-	@include font-size(0.9375);
-}
-
-abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
-	cursor: help;
-}
-
-mark, ins {
-	background: $color__background-ins;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
+.widgettitle{
+  text-transform: uppercase;
 }

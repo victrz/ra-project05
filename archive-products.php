@@ -1,4 +1,4 @@
-<?php echo "products archive";
+<?php
 get_header();
 $queried_object= get_queried_object();
 $title=$queried_object->name;
@@ -9,67 +9,29 @@ $terms = get_terms([
   'hide_empty' => false,
   ]);
 ?>
-<div id="terms" class="flex flex-col flex-align-items-center">
-
-  <h1><?php echo $title;?></h1><ul>
-  <div style="width: 30%; margin: auto; display: flex; justify-content: space-between;">
+<div class="flex flex-col flex-align-items-center width70 margin-auto padding30">
+  <h1>SHOP STUFF</h1>
+    <div id="terms" class="width33 margin-auto flex flex-just-between padding30">
       <?php
       foreach($terms as $term){ ?>
-        <li><a href='<?php echo get_term_link($term->term_id) ?>'><?php echo strtoupper($term->name); ?></a></li>
-        <?php }?></ul>
- </div>
-  <div class="horizontal_dotted_line"></div>
-  <section class="parent">
-<?php while ( have_posts() ) : the_post();?>
-
-<div class="each-product flex flex-col padding-left-item">
-  <div class="journal-entry1">
-    <img class="product-img" src="<?php echo the_field('image'); ?>" onClick="parent.location='<?php the_permalink()?>'" >
-  </div>
-  <div class="product-border flex" >
-      <p style="margin-bottom:0;"><?php the_title(); ?></p>
-      <div class="flex-grow dot-dot-dot"></div>
-      <p style="margin-bottom:0;">$<?php echo get_field('price');?></p>
-  </div>
+        <a href='<?php echo get_term_link($term->term_id) ?>'><?php echo strtoupper($term->name); ?></a>
+      <?php }?>
+   </div>
+  <div class="horizontal-dotted-line width100"></div>
+  <section class="flex flex-wrap flex-just-center">
+    <?php while ( have_posts() ) : the_post();?>
+      <div class="margin-10 width20 flex flex-col">
+        <div class="h-20vh border-solid">
+          <a href="<?php echo the_permalink()?>" ><img class="h-20vh width100" src="<?php echo the_field('image'); ?>"></a>
+        </div>
+        <div class="width100 padding10 border-solid flex" >
+            <p><?php the_title(); ?></p>
+            <div class="flex-grow dot-dot-dot"></div>
+            <p>$<?php echo get_field('price');?></p>
+        </div>
+      </div>
+    <?php endwhile;?>
+  </section>
 </div>
 
-<?php endwhile;?>
-
-</section>
-</div>
-
-<style>
-.each-product{
-  width: 25%;
-  margin: 10px 0;
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*text-align: center;*/
-}
-.journal-entry1{
-  border-style: solid;
-  border-width: 3px 1px 1px 1px;
-  border-color: #c3c3c3;
-  height: 20vh;
-
-}
-.product-img{
-  height: 20vh;
-  width: 100%;
-}
-.product-border{
-  border-style: solid;
-  border-width: 3px 1px 1px 1px;
-  border-color: #c3c3c3;
-  width: 100%;
-  position: relative;
-  padding: 5px;
-  height: auto;
-}
-#terms ul{
-  margin-left: 0px;
-}
-</style>
-
-<?php get_footer();
-?>
+<?php get_footer();?>

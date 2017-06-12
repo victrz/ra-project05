@@ -1,19 +1,17 @@
-<?php echo "adventures archive";
-get_header();?>
+<?php get_header();?>
 
-<div id="test" class="flex flex-col flex-align-items-center">
-  <h1>LATEST ADVENTURES</h1>
-  <div class="horizontal_dotted_line"></div>
-
-<section class="parent">
-
-  <?php while ( have_posts() ) : the_post();?>
-  <div class="child" style='background-image: url("<?php the_field('image');?>");'>
-    <h3><?php the_title(); ?></h3>
-    <input type=button class="button-readmore" onClick="parent.location='<?php the_permalink()?>'" value='READ MORE'>
+<div class="flex flex-col flex-align-items-center width70 margin-auto padding30">
+  <h1 class="padding30">LATEST ADVENTURES</h1>
+  <div class="horizontal-dotted-line width100">
   </div>
+  <section class="flex flex-wrap width100 flex-just-center">
 
-  <?php endwhile;?>
-</section>
-
+    <?php while ( have_posts() ) : the_post();?>
+      <div class="w-50vh margin-10 flex flex-col h-50vh background-img-prop" style='background-image: url("<?php the_field('image');?>");'>
+        <h3 class="base-font width70 line-space-5 text-shadow color-primary margin-10"><?php the_title(); ?></h3>
+        <a href="<?php echo the_permalink()?>" class="button-readmore padding10 w-20vh flex flex-just-center text-shadow">READ MORE</a>
+      </div>
+    <?php endwhile;?>
+  </section>
+</div>
 <?php get_footer();?>
