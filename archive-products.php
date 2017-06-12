@@ -20,11 +20,11 @@ $terms = get_terms([
   <div class="horizontal-dotted-line width100"></div>
   <section class="flex flex-wrap flex-just-center">
     <?php while ( have_posts() ) : the_post();?>
-      <div class="margin-10 width20 flex flex-col">
+      <div class="margin-10 content-box width20 flex flex-col">
         <div class="h-20vh border-solid">
           <a href="<?php echo the_permalink()?>" ><img class="h-20vh width100" src="<?php echo the_field('image'); ?>"></a>
         </div>
-        <div class="width100 padding10 border-solid flex" >
+        <div class="width100 border-solid flex">
             <p><?php the_title(); ?></p>
             <div class="flex-grow dot-dot-dot"></div>
             <p>$<?php echo get_field('price');?></p>

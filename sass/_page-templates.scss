@@ -357,7 +357,9 @@ section >h1{
 }
 
 /*HEIGHTS and WIDTHS */
-
+.h-10vh{
+  height: 10vh;
+}
 .h-20vh{
   height: 20vh;
 }
@@ -381,6 +383,9 @@ section >h1{
 }
 .width25{
   width: 25%;
+}
+.content-box{
+  box-sizing: content-box;
 }
 .width33{
   width: 33.333%;
