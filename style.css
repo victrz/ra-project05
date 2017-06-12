@@ -231,6 +231,9 @@ th {
 .uppercase {
   text-transform: uppercase; }
 
+.small-font {
+  font-size: 0.7em; }
+
 .base-font {
   font-family: "Merriweather", serif; }
 
@@ -876,7 +879,7 @@ footer {
 /* BORDERS */
 .dot-dot-dot {
   border-bottom: 2px dotted black;
-  margin: 0 5px 7px 5px; }
+  margin: 0 5px 6px 5px; }
 
 .horizontal-dotted-line {
   border-top: 1px dotted #c3c3c3;

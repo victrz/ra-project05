@@ -25,9 +25,9 @@ $terms = get_terms([
           <a href="<?php echo the_permalink()?>" ><img class="h-20vh width100" src="<?php echo the_field('image'); ?>"></a>
         </div>
         <div class="width100 border-solid flex">
-            <p><?php the_title(); ?></p>
+            <p class="small-font"><?php the_title(); ?></p>
             <div class="flex-grow dot-dot-dot"></div>
-            <p>$<?php echo get_field('price');?></p>
+            <p class="small-font">$<?php echo get_field('price');?></p>
         </div>
       </div>
     <?php endwhile;?>
